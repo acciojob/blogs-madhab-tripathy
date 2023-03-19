@@ -32,7 +32,6 @@ public class BlogService {
         List<Blog> blogList = user.getBlogList();
         blogList.add(blog);
         // user set his blog list
-        user.setBlogList(blogList);
         blog.setUser(user);
         // save in database
         blogRepository1.save(blog);
@@ -43,7 +42,9 @@ public class BlogService {
         //delete blog and corresponding images
         Blog blog = blogRepository1.findById(blogId).get();
         List<Image> imageList = blog.getImageList();
-        imageList.clear();
+        if(!imageList.isEmpty()) {
+            imageList.clear();
+        }
         blogRepository1.deleteById(blogId);
     }
 }
