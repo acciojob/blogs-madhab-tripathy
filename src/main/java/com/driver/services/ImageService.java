@@ -29,7 +29,7 @@ public class ImageService {
     }
 
     public void deleteImage(Integer id){
-        blogRepository2.deleteById(id);
+        imageRepository2.deleteById(id);
     }
 
     public int countImagesInScreen(Integer id, String screenDimensions) {
