@@ -33,8 +33,9 @@ public class BlogService {
         blogList.add(blog);
         // user set his blog list
         blog.setUser(user);
+        user.setBlogList(blogList);
         // save in database
-        blogRepository1.save(blog);
+        userRepository1.save(user);
         return blog;
     }
 
