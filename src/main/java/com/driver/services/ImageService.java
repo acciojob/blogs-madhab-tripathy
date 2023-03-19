@@ -45,12 +45,8 @@ public class ImageService {
 
         int imageWidth = Integer.parseInt(size[0]);
         int imageHeight = Integer.parseInt(size[1]);
-        int count = 0;
-        while (imageWidth <= screenWidth && imageHeight <= screenHeight) {
-            count++;
-            imageWidth += imageWidth;
-            imageHeight += imageHeight;
-        }
-        return count;
+        int height = screenHeight/imageHeight;
+        int width = screenWidth/imageWidth;
+        return width*height;
     }
 }
